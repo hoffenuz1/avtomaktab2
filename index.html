@@ -34,13 +34,13 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: cadetblue;
+            background-color: #1a237e;
         }
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: cadetblue;
+            background-color: #1a237e;
             padding: 15px 30px;
             color: white;
         }
@@ -52,7 +52,7 @@
             transition: color 0.3s;
         }
         .navbar a:hover {
-            color: #ffccbc;
+            color: #e3f2fd;
         }
         .hero {
             height: 400px;
@@ -82,7 +82,7 @@
         }
         .section h2 {
             text-align: center;
-            color: cadetblue;
+            color: #1a237e;
             margin-bottom: 20px;
         }
         .info {
@@ -93,7 +93,7 @@
         }
         .info .box {
             flex: 1 1 300px;
-            background: #fbe9e7;
+            background: #e8eaf6;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -106,7 +106,7 @@
             width: 80%;
             max-width: 800px;
             height: 450px;
-            border: 5px solid cadetblue;
+            border: 5px solid #1a237e;
             border-radius: 10px;
         }
         .gallery {
@@ -130,7 +130,7 @@
         .footer {
             text-align: center;
             padding: 20px;
-            background-color: cadetblue;
+            background-color: #1a237e;
             color: white;
             margin-top: 40px;
         }
@@ -152,7 +152,7 @@
             left: 0;
             width: 70%;
             height: 100%;
-            background-color: cadetblue;
+            background-color: #1a237e;
             z-index: 1000;
             flex-direction: column;
             padding-top: 60px;
@@ -220,7 +220,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: cadetblue;
+            background-color: #1a237e;
             flex-direction: column;
             text-align: center;
         }
@@ -366,24 +366,24 @@ onmouseout="this.style.background='#3b82f6'; this.style.transform='none'; this.s
         // Sahifa yuklanganda va linklar bosilganda oq ekran ko'rsatmaslik uchun
         document.addEventListener('DOMContentLoaded', function() {
             // Sahifa yuklanganda orqa fon rangini o'rnatish
-            document.body.style.backgroundColor = 'cadetblue';
+            document.body.style.backgroundColor = '#1a237e';
             
             const links = document.querySelectorAll('a');
             links.forEach(link => {
                 link.addEventListener('click', function(e) {
-                    // Sahifani cadetblue rangda qolishini ta'minlash
-                    document.body.style.backgroundColor = 'cadetblue';
+                    // Sahifani to'q ko'k rangda qolishini ta'minlash
+                    document.body.style.backgroundColor = '#1a237e';
                     
                     // Flash effektini oldini olish
                     const nextPage = this.getAttribute('href');
                     sessionStorage.setItem('lastPage', window.location.href);
-                    sessionStorage.setItem('backgroundColor', 'cadetblue');
+                    sessionStorage.setItem('backgroundColor', '#1a237e');
                 });
             });
             
             // Agar oldingi sahifadan kelgan bo'lsa
             if(sessionStorage.getItem('lastPage')) {
-                document.body.style.backgroundColor = sessionStorage.getItem('backgroundColor') || 'cadetblue';
+                document.body.style.backgroundColor = sessionStorage.getItem('backgroundColor') || '#1a237e';
             }
         });
     </script>
