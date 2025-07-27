@@ -1,0 +1,11 @@
+[[redirects]]
+  from = "http://avtotestu.uz/*"
+  to = "https://www.avtotestu.uz/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://avtotestu.uz/*"
+  to = "https://www.avtotestu.uz/:splat"
+  status = 301
+  force = true

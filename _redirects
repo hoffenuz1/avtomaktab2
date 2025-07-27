@@ -1,0 +1,6 @@
+# non-www dan www.ga 301 redirect
+https://avtotestu.uz/* https://www.avtotestu.uz/:splat 301!
+
+# HTTP dan HTTPS ga 301 redirect (odatda Netlify avtomatik qiladi, lekin baribir qo‘shish foydali)
+http://avtotestu.uz/* https://www.avtotestu.uz/:splat 301!
+http://www.avtotestu.uz/* https://www.avtotestu.uz/:splat 301!

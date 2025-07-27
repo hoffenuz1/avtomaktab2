@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avtotestu.uz - Avtotest</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Avtotestu.uz",
+  "url": "https://www.avtotestu.uz",
+  "description": "Avtotestu.uz – haydovchilik guvohnomasi olish uchun YHQ testlari va darsliklar",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.avtotestu.uz/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+  <meta name="description" content="Avtotest – haydovchilik guvohnomasini olish uchun YHQ testlari, Avtotest, Avtotest 2025, avtomaktab imtihonlari va onlayn testlar bazasi. Prava olish uchun zamonaviy yechim.">
+  <meta name="keywords" content="avtotest, avtotestu.uz, avtotest 2025, prava test, prava olish, YHQ testlari, avtomaktab, haydovchilik testi, prava test , avto test, avtotest 2025">
+  <meta name="author" content="Avtotestu.uz" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="yandex-verification" content="f2d63f167a48024f" />
+
+   <link rel="canonical" href="https://www.avtotestu.uz/" />
+    <link rel="icon" type="image/jpg" href="/rasm1.jpg">
+    <meta property="og:image" content="https://www.avtotestu.uz/rasm1.jpg">
+
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: cadetblue;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: cadetblue;
+            padding: 15px 30px;
+            color: white;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .navbar a:hover {
+            color: #ffccbc;
+        }
+        .hero {
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.5);
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .section {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            text-align: center;
+            color: cadetblue;
+            margin-bottom: 20px;
+        }
+        .info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .info .box {
+            flex: 1 1 300px;
+            background: #fbe9e7;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .video-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .video-section iframe, .video-section video {
+            width: 80%;
+            max-width: 800px;
+            height: 450px;
+            border: 5px solid cadetblue;
+            border-radius: 10px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: cadetblue;
+            color: white;
+            margin-top: 40px;
+        }
+        
+        /* Mobile menu styles */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 70%;
+            height: 100%;
+            background-color: cadetblue;
+            z-index: 1000;
+            flex-direction: column;
+            padding-top: 60px;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .mobile-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            display: block;
+            font-weight: bold;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar div:nth-child(2) {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .section {
+                margin: 20px;
+                padding: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .video-fullscreen video {
+                max-height: 300px;
+            }
+        }
+        
+        .video-fullscreen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: cadetblue;
+            flex-direction: column;
+            text-align: center;
+        }
+        .video-fullscreen h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: white;
+        }
+        .video-fullscreen video {
+            width: 80%;
+            max-width: 1050px;
+            max-height: 550px;
+            border-radius: 10px;
+            border-radius: 10px;
+            border: 3px solid white;
+            box-shadow: 0 2px 1px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .video-fullscreen {
+                min-height: auto;
+                padding: 40px 0;
+            }
+            .video-fullscreen video {
+                max-height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">AvtoTest</div>
+        <div>
+            <a href="admin.html">Malumotlar</a>
+            <a href="avtomaktab.html">Ro'yxatdan o'tish</a>
+            <a href="aloqa.html">Aloqa</a>
+        </div>
+        <button class="mobile-menu-btn">☰</button>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <button class="close-btn">✕</button>
+        <a href="admin.html">Malumotlar</a>
+        <a href="avtomaktab.html">Ro'yxatdan o'tish</a>
+        <a href="aloqa.html">Aloqa</a>
+    </div>
+
+    <div class="hero">
+        <div>
+            <h1>AvtoTestga Xush Kelibsiz!</h1>
+            <p>Avtotest eng yaxshi bazadan tuzilgan</p>
+            <div>  <a href="https://tests.avtotestu.uz/" style="
+
+                display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #3b82f6;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+" onmouseover="this.style.background='#2563eb'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.2)';"
+onmouseout="this.style.background='#3b82f6'; this.style.transform='none'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)';">
+                  Test ishlash
+                </a>
+             </div>
+          
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Haydovchilik Guvohnmasi olish</h2>
+        <div class="info">
+            <div class="box">
+                <h3>Professional Avtotest</h3>
+                <p>AvtoTestimiz tajribali va litsenziyaga ega o'qituvchilar bilan xizmat ko'rsatadi. Har bir o'quvchimizga individual yondashuv kafolatlanadi.</p>
+            </div>
+            <div class="box">
+                <h3>Avto Texnika</h3>
+                <p>Bizda zamonaviy va qulay Dizayn . O'qituvchilarimiz tomonidan aniq va profissonal savollar tuzilgan.</p>
+            </div>
+            <div class="box">
+                <h3>Diqqat!</h3>
+                <p>Eslatib oʻtamiz saytimiz test rejimida o'z faoliyatini olib bormoqda.Savol yoki takliflaringiz mavjud bo'lsa aloqa bo'limi orqali bizga murojat qilishingizni soʻrab qolamiz..</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-fullscreen">
+        <h2>Tanishtiruv Videosi</h2>
+        <video controls>
+            <source src="video_1.mp4" type="video/mp4">
+            Brauzeringiz video formatini qo'llab-quvvatlamaydi.
+        </video>
+    </div>
+    
+    
+    <div class="section">
+        <h2>Bizning Avto Galereya 🚘</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+  
+<!-- Video 1 -->
+<div>
+    <h3>Haydovchilik imtihoni tayyorgarligi</h3>
+      <img src="photo1.jpg" alt="Haydovchilik imtihoni" width="100%" height="200" style="object-fit: cover;">
+    </a>
+  </div>
+  
+  <!-- Video 2 -->
+  <div>
+    <h3>Yo'l harakati qoidalari (YHQ) 2024</h3>
+      <img src="photo2.jpg" alt="YHQ 2024" width="100%" height="200" style="object-fit: cover;">
+    </a>
+  </div>
+  
+  <!-- Video 3 -->
+  <div>
+    <h3>Murojat uchun</h3>
+      <img src="image.png" alt="Avtomaktab test savollari" width="100%" height="200" style="object-fit: cover;">
+    </a>
+  </div>
+  
+    </div>
+
+    <script>
+        // Mobile Menu
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const closeBtn = document.querySelector('.close-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+        
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+        
+        // Sahifa yuklanganda va linklar bosilganda oq ekran ko'rsatmaslik uchun
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sahifa yuklanganda orqa fon rangini o'rnatish
+            document.body.style.backgroundColor = 'cadetblue';
+            
+            const links = document.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Sahifani cadetblue rangda qolishini ta'minlash
+                    document.body.style.backgroundColor = 'cadetblue';
+                    
+                    // Flash effektini oldini olish
+                    const nextPage = this.getAttribute('href');
+                    sessionStorage.setItem('lastPage', window.location.href);
+                    sessionStorage.setItem('backgroundColor', 'cadetblue');
+                });
+            });
+            
+            // Agar oldingi sahifadan kelgan bo'lsa
+            if(sessionStorage.getItem('lastPage')) {
+                document.body.style.backgroundColor = sessionStorage.getItem('backgroundColor') || 'cadetblue';
+            }
+        });
+    </script>
+</body>
+</html>

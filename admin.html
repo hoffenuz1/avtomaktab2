@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.avtotestu.uz/">
+
+    <title>Mavjud Avtomobillar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: cadetblue;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: cadetblue;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .navbar .menu a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .navbar .menu a:hover {
+            color: #ffccbc;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        h2 {
+            text-align: center;
+            color: cadetblue;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        thead {
+            background-color: cadetblue;
+            color: white;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background-color: cadetblue;
+            color: white;
+            margin-top: 40px;
+        }
+        
+        /* Mobile menu styles */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 70%;
+            height: 100%;
+            background-color: cadetblue;
+            z-index: 1000;
+            flex-direction: column;
+            padding-top: 60px;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .mobile-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            display: block;
+            font-weight: bold;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar .menu {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .container {
+                margin: 20px auto;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">AvtoMaktab</div>
+        <div class="menu">
+            <a href="index.html">Bosh sahifa</a>
+            <a href="avtomaktab.html">Ro'yxatdan o'tish</a>
+            <a href="aloqa.html">Aloqa</a>
+        </div>
+        <button class="mobile-menu-btn">☰</button>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <button class="close-btn">✕</button>
+        <a href="index.html">Bosh sahifa</a>
+        <a href="avtomaktab.html">Ro'yxatdan o'tish</a>
+        <a href="aloqa.html">Aloqa</a>
+    </div>
+
+    <div class="container">
+        <h2> Mavjud O'qituvchilar Ro'yxati</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Ism</th>
+                    <th>Telefon</th>
+                    <th>Ma'lumot</th>
+                </tr>
+            </thead>
+            <tbody id="oqituvchilar-body">
+                <tr><td colspan="4">Yuklanmoqda...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        <h2>🚘 Mavjud Avtomobillar Ro'yxati</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Davlat Raqami</th>
+                    <th>Toifasi</th>
+                    <th>Turi</th>
+                </tr>
+            </thead>
+            <tbody id="avtomobillar-body">
+                <tr><td colspan="5">Yuklanmoqda...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // O'qituvchilarni yuklash
+        fetch('https://node-2-g32w.onrender.com/oqituvchi')
+            .then(response => response.json())
+            .then(data => {
+                const tbody = document.getElementById('oqituvchilar-body');
+                tbody.innerHTML = ''; // oldingi "Yuklanmoqda" ni tozalash
+                if (data.length > 0) {
+                    data.forEach(row => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td>${row.id}</td>
+                            <td>${row.ism}</td>
+                            <td>${row.telefon}</td>
+                            <td>${row.malumot}</td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+                } else {
+                    tbody.innerHTML = `<tr><td colspan="4">Hech qanday o'qituvchi topilmadi.</td></tr>`;
+                }
+            })
+            .catch(error => {
+                console.error('Xatolik:', error);
+                document.getElementById('oqituvchilar-body').innerHTML = `<tr><td colspan="4">Serverdan ma'lumot olishda xatolik.</td></tr>`;
+            });
+
+        // Avtomobillarni yuklash
+        fetch('https://node-2-g32w.onrender.com/api/avtomobil')
+            .then(response => response.json())
+            .then(data => {
+                const tbody = document.getElementById('avtomobil-body');
+                tbody.innerHTML = ''; // oldingi "Yuklanmoqda" ni tozalash
+                if (data.length > 0) {
+                    data.forEach(row => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td>${row.id}</td>
+                            <td>${row.nomi}</td>
+                            <td>${row.davlat_raqami}</td>
+                            <td>${row.Toifasi}</td>
+                            <td>${row.Turi}</td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+                } else {
+                    tbody.innerHTML = `<tr><td colspan="5">🚗 Hech qanday avtomobil topilmadi.</td></tr>`;
+                }
+            })
+            .catch(error => {
+                console.error('Xatolik:', error);
+                document.getElementById('avtomobillar-body').innerHTML = `<tr><td colspan="5">Serverdan ma'lumot olishda xatolik.</td></tr>`;
+            });
+            
+        // Mobile Menu
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const closeBtn = document.querySelector('.close-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+        
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+        
+        // Sahifa yuklanganda va linklar bosilganda oq ekran ko'rsatmaslik uchun
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Sahifani cadetblue rangda qolishini ta'minlash
+                    document.body.style.backgroundColor = 'cadetblue';
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
